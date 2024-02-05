@@ -1,0 +1,80 @@
+*{padding: 0;margin: 0;border: 0;}
+a:focus,a:active{outline: none;}
+
+body{
+    font-size: 16px;
+    background: rgb(238,32,206);
+    background: linear-gradient(279deg, rgba(238,32,206,0.927608543417367) 22%, rgba(159,26,156,0.896796218487395) 90%);
+}
+a, button{
+    font-size: inherit;
+}
+
+input{
+    outline: none;
+}
+
+form{
+    border: 1px solid #fff;
+    border-radius: 25px;
+    width: 300px;
+    margin: 300px auto;
+    background-color: #fff;
+    padding: 0px 20px;
+}
+
+h1{
+    font-size: 24px;
+    font-weight: 800;
+    padding: 20px 0 30px;
+    text-align: center;
+}
+
+.btn_right{
+    padding: 12px 30px;
+    border: 1px solid grey;
+    border-radius: 99px;
+}
+.btn_left{
+    margin-left: 20px;
+}
+.btn_left,
+.btn_center{
+    padding: 12px 30px;
+    background: rgb(238,32,206);
+    background: linear-gradient(279deg, rgba(238,32,206,0.927608543417367) 22%, rgba(159,26,156,0.896796218487395) 90%);
+    border-radius: 99px;
+}
+
+.input_group{
+    padding: 30px 0px 20px;
+}
+
+.input{
+    border: none;
+    border-bottom: 1px solid rgb(238,32,206);
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.input::placeholder{
+    font-size: 16px;
+    color: rgb(238,32,206);
+}
+
+.btn_center{
+    display: block;
+    width: 100%;
+    color: #fff;
+    margin: 20px 0px;
+}
+
+.foot{
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+a{
+    color: rgb(238,32,206);
+}
