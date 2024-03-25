@@ -1,12 +1,12 @@
 function createPersonClosure(name, surname) {
     let fatherName = '';
-    let age;
+    let age = 18;
 
-    let getName = () => name;
-    let getSurname = () => surname;
-    let getFatherName = () => fatherName;
-    let getAge = () => age;
-    let getFullName = () => `${surname} ${name} ${fatherName}`.trim();
+    const getName = () => name;
+    const getSurname = () => surname;
+    const getFatherName = () => fatherName;
+    const getAge = () => age;
+    const getFullName = () => `${surname} ${name} ${fatherName}`.trim();
 
     function firstLetterToUpper(word){
         return word[0].toUpperCase() + word.slice(1);
@@ -34,10 +34,12 @@ function createPersonClosure(name, surname) {
     }
 
     function setAge(newAge) {
-        if (typeof newAge === 'number' && newAge > 0 && newAge < 100) {
+        if (typeof newAge === 'number' && newAge >= 0 && newAge <= 100) {
             age = newAge;
+            return age;
+        } else {
+            return age;
         }
-        return getAge();
     }
 
     function setFullName(newFullName) {
@@ -100,7 +102,8 @@ function personForm(domElement, person) {
         inputPIB.value = person.getFullName();
     }
     inputAge.oninput = () => {
-        inputAge.value = person.setAge(inputAge.value);
+        const newAge = person.setAge(+inputAge.value);
+        inputAge.value = newAge;
     }
     inputPIB.oninput = () => {
         inputPIB.value = person.setFullName(inputPIB.value);

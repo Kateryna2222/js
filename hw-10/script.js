@@ -187,11 +187,11 @@
     
         let {name = 'Ivan', surname = 'Ivanov', fatherName = 'Ivanovych', age = 18} = obj;
     
-        let getName = () => name;
-        let getSurname = () => surname;
-        let getFatherName = () => fatherName;
-        let getAge = () => age;
-        let getFullName = () => `${surname} ${name} ${fatherName}`.trimEnd();
+        const getName = () => name;
+        const getSurname = () => surname;
+        const getFatherName = () => fatherName;
+        const getAge = () => age;
+        const getFullName = () => `${surname} ${name} ${fatherName}`.trimEnd();
     
         function checkIsCorrect(str) {
             if(typeof str === 'string' && str[0] === str[0].toUpperCase()){
