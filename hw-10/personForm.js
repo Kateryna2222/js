@@ -117,7 +117,3 @@ function personForm(domElement, person) {
 
 personForm(main, a);
 personForm(document.body, b);
-
-
-
-
