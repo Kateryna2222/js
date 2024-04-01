@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Hw-12 REDUX</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="header">
+        <img src="./img/logo.png" alt="logo" class="logo">
+        <div>
+            Каса: 
+            <span id="kasa">0</span>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="cards" id="cards">
+            <div class="card" id="milkCard">
+                <img src="./img/milk.png" alt="milk">
+                <div>
+                    <div class="count">
+                        Молочний шоколад <br>
+                        <span id="milkCount">0</span>
+                        штук
+                    </div>
+                    <div class="size">
+                        <span class="size" id="milkPrice">0</span>
+                        /шт
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="chocolateCard">
+                <img src="./img/dark.png" alt="chocolate">
+                <div>
+                    <div class="count">
+                        Чорний шоколад <br>
+                        <span id="chocolateCount">0</span>
+                        штук
+                    </div>
+                    <div class="size">
+                        <span class="size" id="chocolatePrice">0</span>
+                        /шт
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="oreoCard">
+                <img src="./img/oreo.png" alt="oreo">
+                <div>
+                    <div class="count">
+                        Зі смаком оріо <br>
+                        <span id="oreoCount">0</span>
+                        штук
+                    </div>
+                    <div class="size">
+                        <span class="size" id="oreoPrice">0</span>
+                        /шт
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="userForm" id="userForm">
+            Ваш баланс: 
+            <span class="balance" id="balance">1000</span>
+        </div>
+    </main>
+
+
+
+    <!-- make card disable when count 0 and make nema v nayavnosti -->
+    <!-- u vas nedostatnio hrn -->
+
+    <script src="./script.js"></script>
+</body>
+</html>
