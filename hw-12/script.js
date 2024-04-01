@@ -43,18 +43,19 @@ function reducer(state, {type, what, amount, money}){
             kasa: 0
         }
     }
-    if (type === 'toBuy'){ 
-         return {
-             ...state, 
-             [what]: {
-                 ...state[what],
-                  count: money>0 && amount > 0 && state[what].count > 0 &&
-                         amount <= state[what].count && amount > 0? state[what].count - amount: state[what].count
-             },
-             kasa: (state[what].price * amount) > 0 && (state[what].price * amount <= money) && 
-                   (state.kasa + (state[what].price * amount) <= moneyNow) && state[what].count > 0?
-                   state.kasa + (state[what].price * amount) : state.kasa
-         }
+     if (type === 'toBuy'){ 
+        if((amount <= state[what].count) && (state[what].count > 0)){
+            console.log(money)
+            return {
+                ...state, 
+                [what]: {
+                    ...state[what],
+                     count: state[what].price * amount <= money && amount > 0? state[what].count - amount: state[what].count
+                },
+                kasa: (state[what].price * amount) > 0 && (state[what].price * amount <= money)?
+                      state.kasa + (state[what].price * amount) : state.kasa
+            }
+        }
     }
     return state 
 }
@@ -93,9 +94,11 @@ store.subscribe(()=>{
     oreoCount.innerText = oreo.count;
 
     kasa.innerText = store.getState().kasa;
-    balance.innerText = (moneyNow- store.getState().kasa);
     title.innerText = 'Каса: ' + kasa.innerText;
 
+    balance.innerText = (moneyNow - store.getState().kasa);
+    
+    
     milk.count === 0? milkCard.classList.add('disable') : milk.count;
     chocolate.count === 0? chocolateCard.classList.add('disable') : chocolate.count;
     oreo.count === 0? oreoCard.classList.add('disable') : oreo.count;
@@ -103,7 +106,7 @@ store.subscribe(()=>{
 
 
 //action
-const buySomething = (what, amount) => ({type: 'toBuy', what, amount, money: moneyNow});
+const buySomething = (what, amount) => ({type: 'toBuy', what, amount, money: +balance.innerText});
 btn.onclick = () => store.dispatch(buySomething(select.value, input.value))
 
 

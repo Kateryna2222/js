@@ -90,6 +90,14 @@ body{
     margin: 20px 0;
     font-size: 24px;
     width: 100px;
+    border: 1px solid rgb(193, 140, 193);
+}
+
+#userForm input:focus{
+    outline: none;
+    border: 3px solid rgb(193, 140, 193);
+    border-radius: 2px;
+
 }
 
 #userForm button{
