@@ -1,21 +1,21 @@
 let moneyNow = balance.innerText;
 
-//createStore
-function createStore(reducer){
-    let state       = reducer(undefined, {}) 
-    let cbs         = []                    
+createStore
+ function createStore(reducer){
+     let state       = reducer(undefined, {}) 
+     let cbs         = []                    
     
-    const getState  = () => state            
-    const subscribe = cb => (cbs.push(cb),   
-                             () => cbs = cbs.filter(c => c !== cb))
+     const getState  = () => state            
+     const subscribe = cb => (cbs.push(cb),   
+                              () => cbs = cbs.filter(c => c !== cb))
                              
-    const dispatch  = action => { 
-        const newState = reducer(state, action) 
-        if (newState !== state){ 
-            state = newState 
-            for (let cb of cbs)  cb() 
-        }
-    }
+     const dispatch  = action => { 
+         const newState = reducer(state, action) 
+         if (newState !== state){ 
+             state = newState 
+             for (let cb of cbs)  cb() 
+         }
+     }
     
     return {
         getState, 
@@ -23,6 +23,7 @@ function createStore(reducer){
         subscribe
     }
 }
+
 
 //reducer
 function reducer(state, {type, what, amount, money}){ 
